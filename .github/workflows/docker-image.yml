@@ -26,7 +26,13 @@ jobs:
     - name: Login to Amazon ECR 
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-      
+      with:
+        env: |
+          AWS_ACCESS_KEY_ID: AKIA227AA22EP5RCU5P4
+          AWS_SECRET_ACCESS_KEY: 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
+          AWS_DEFAULT_REGION: us-east-1
+          AWS_REGION: us-east-1
+        
     - name: Build the Docker image
       run: |
         docker build -t yolox:latest .
