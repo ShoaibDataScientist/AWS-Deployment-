@@ -1,0 +1,9 @@
+{
+   "AWSEBDockerrunVersion": "1",
+   "Image": {
+      "Name": "745109771912.dkr.ecr.us-east-1.amazonaws.com/yolox:latest"
+   },
+   "Ports": [
+      {"ContainerPort": "80"}
+   ]
+}
