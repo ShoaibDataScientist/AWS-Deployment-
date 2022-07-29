@@ -36,8 +36,8 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build -t yolox:latest .
-        docker tag yolox:latest public.ecr.aws/s4t8p8e0/yolox:latest
-        docker push public.ecr.aws/s4t8p8e0/yolox:latest
+        docker tag yolox:latest 745109771912.dkr.ecr.us-east-1.amazonaws.com/yolox:latest
+        docker push 745109771912.dkr.ecr.us-east-1.amazonaws.com/yolox:latest
         
     
     
