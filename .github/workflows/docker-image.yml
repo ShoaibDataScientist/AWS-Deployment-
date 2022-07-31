@@ -40,7 +40,7 @@ jobs:
         docker push 079473687452.dkr.ecr.us-east-1.amazonaws.com/yolox:latest
       
     - name: Rebuild EB environment
-      run: aws elasticbeanstalk rebuild-environment --environment-name Yoloxprediction-env
+      run: aws elasticbeanstalk rebuild-environment --environment-name Yoloxpredictionenv-env 
         
     
     
