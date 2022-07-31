@@ -38,6 +38,9 @@ jobs:
         docker build -t yolox:latest .
         docker tag yolox:latest 745109771912.dkr.ecr.us-east-1.amazonaws.com/yolox:latest
         docker push 745109771912.dkr.ecr.us-east-1.amazonaws.com/yolox:latest
+      
+    - name: Rebuild EB environment
+      run: aws elasticbeanstalk rebuild-environment --environment-name Yolowebapp-env
         
     
     
