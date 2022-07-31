@@ -32,7 +32,10 @@ jobs:
           AWS_SECRET_ACCESS_KEY: RFYHBLvYCO+zcHb+Rx4f4CVQ/dTFgkM3gu56pg8f
           AWS_DEFAULT_REGION: us-east-1
           AWS_REGION: us-east-1
-        
+    
+    - name: Delete old latest
+      run: aws ecr batch-delete-image --repository-name yolox --image-ids imageTag=latest
+
     - name: Build the Docker image
       run: |
         docker build -t yolox:latest .
@@ -40,7 +43,7 @@ jobs:
         docker push 079473687452.dkr.ecr.us-east-1.amazonaws.com/yolox:latest
       
     - name: Rebuild EB environment
-      run: aws elasticbeanstalk rebuild-environment --environment-name Yoloxpredictionenv-env 
+      run: aws elasticbeanstalk rebuild-environment --environment-name Yoloxpredictionenv-env
         
     
     
